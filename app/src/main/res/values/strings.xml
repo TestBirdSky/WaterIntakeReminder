@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Water Intake Reminder</string>
+    <string name="water_tracker">Water Tracker</string>
+    <string name="tips_water">Welcome to our hydration companion! </string>
+    <string name="tips_water_2">We\'re excited to join you on your journey to better health through proper hydration. \nLet\'s work together to track your water intake and ensure you stay refreshed and energized.\nCheers to a healthier you!</string>
+    <string name="alright_let_s_continue">Alright,Let’s Continue</string>
+    <string name="tv_gender_tips">What’s Your Gender</string>
+    <string name="tv_weight_tips">What’s Your Weight</string>
+    <string name="next">Next</string>
+    <string name="complete">Complete</string>
+    <string name="today_s_goal">Today‘s Goal:</string>
+    <string name="edit">Edit</string>
+    <string name="drink_water_tips_1">You still need to drink three glasses of water to complete today\'s goal！</string>
+    <string name="add_your_goal">Add Your Goal</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="his_title">Today’s hydration log</string>
+    <string name="not_drink_tips">You haven\'t drank water yet.\n Go drink water.</string>
+    <string name="setting">SETTING</string>
+    <string name="gender_weight">Gender/Weight</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="reminders">Reminders</string>
+    <string name="drink_ml">+Drink %dml</string>
+    <string name="daily_water_intake_avg">Daily Water Intake Avg</string>
+    <string name="daily_intake_frequency_avg">Daily Intake Frequency Avg</string>
+    <string name="daily_completion_rate_avg">Daily Completion Rate Avg</string>
+</resources>

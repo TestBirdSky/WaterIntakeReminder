@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="46dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_man"
+        android:layout_width="99dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="105dp"
+        android:background="#33000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_woman"
+        android:layout_width="99dp"
+        android:layout_height="5dp"
+        android:layout_marginHorizontal="6dp"
+        android:background="#FCA05D"
+        app:layout_constraintLeft_toRightOf="@id/iv_man"
+        app:layout_constraintTop_toTopOf="@id/iv_man" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:gravity="center"
+        android:text="@string/tv_weight_tips"
+        android:textColor="#1C274C"
+        android:textSize="@dimen/test_18"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/iv_man" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:layout_marginHorizontal="34dp"
+        android:layout_marginTop="77dp"
+        android:background="@drawable/bg_unselected"
+        app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/number_picker"
+        android:layout_width="36dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="71dp"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bg"
+        app:layout_constraintLeft_toLeftOf="@id/iv_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_bg"
+        app:np_dividerColor="@color/color_t"
+        app:np_height="180dp"
+        app:np_max="300"
+        app:np_min="20"
+        app:np_selectedTextColor="#FCA05D"
+        app:np_selectedTextSize="20sp"
+        app:np_textColor="#C0C0C0"
+        app:np_textSize="20sp"
+        app:np_value="60"
+        app:np_width="64dp" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/pick_unit"
+        android:layout_width="36dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="71dp"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bg"
+        app:layout_constraintRight_toRightOf="@id/iv_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_bg"
+        app:np_dividerColor="@color/color_t"
+        app:np_height="180dp"
+        app:np_max="2"
+        app:np_min="1"
+        app:np_selectedTextColor="#FCA05D"
+        app:np_selectedTextSize="20sp"
+        app:np_textColor="#C0C0C0"
+        app:np_textSize="20sp"
+        app:np_value="1"
+        app:np_width="64dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_next"
+        android:layout_width="246dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="89dp"
+        android:background="@drawable/bg_btn1"
+        android:gravity="center"
+        android:text="@string/complete"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

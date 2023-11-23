@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="308dp"
+        android:layout_height="257dp"
+        android:background="@drawable/bg_dialog"
+        android:paddingHorizontal="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="Gender/Weight"
+            android:textColor="#1C274C"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#F7F7F7"
+            app:layout_constraintBottom_toTopOf="@id/tv_cancel" />
+
+        <View
+            android:id="@+id/view_div"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="#F7F7F7"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_cancel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="127dp"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="#C2C2C2"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="127dp"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textColor="#4AA8F6"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/picker_sex"
+            android:layout_width="66dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintBottom_toTopOf="@id/view_div"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/picker_weight"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:np_dividerColor="@color/color_t"
+            app:np_height="180dp"
+            app:np_max="2"
+            app:np_min="1"
+            app:np_selectedTextColor="#FCA05D"
+            app:np_selectedTextSize="15sp"
+            app:np_textColor="#C0C0C0"
+            app:np_textSize="15sp"
+            app:np_value="60"
+            app:np_width="64dp" />
+
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/picker_weight"
+            android:layout_width="60dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintBottom_toTopOf="@id/view_div"
+            app:layout_constraintLeft_toRightOf="@id/picker_sex"
+            app:layout_constraintRight_toLeftOf="@id/picker_unit"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:np_dividerColor="@color/color_t"
+            app:np_height="180dp"
+            app:np_max="300"
+            app:np_min="20"
+            app:np_selectedTextColor="#FCA05D"
+            app:np_selectedTextSize="15sp"
+            app:np_textColor="#C0C0C0"
+            app:np_textSize="15sp"
+            app:np_value="60"
+            app:np_width="64dp" />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/picker_unit"
+            android:layout_width="60dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintBottom_toTopOf="@id/view_div"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/picker_weight"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:np_dividerColor="@color/color_t"
+            app:np_height="180dp"
+            app:np_max="2"
+            app:np_min="1"
+            app:np_selectedTextColor="#FCA05D"
+            app:np_selectedTextSize="15sp"
+            app:np_textColor="#C0C0C0"
+            app:np_textSize="15sp"
+            app:np_value="60"
+            app:np_width="64dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

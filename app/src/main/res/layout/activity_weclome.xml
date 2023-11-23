@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/ic_welcom_bg">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_icon_app"
+        android:layout_width="118dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/ic_welcom_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_wt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:gravity="center"
+        android:text="@string/water_tracker"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/iv_icon_app" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/liner_pro"
+        tools:progress="10"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginBottom="54dp"
+        app:indicatorColor="#2B8BCE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:trackColor="#FFFFFF"
+        app:trackCornerRadius="21dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

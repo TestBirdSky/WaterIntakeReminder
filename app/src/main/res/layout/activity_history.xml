@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F8FB">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="22dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="@id/title_card"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title_card" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/title_card"
+        android:layout_width="208dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title_start"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#1C274C"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="08 Otc" />
+
+            <View
+                android:id="@+id/view_title"
+                android:layout_width="30dp"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="#1C274C" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title_end"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#1C274C"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="08 Otc" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="269dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_rv"
+        app:layout_constraintTop_toBottomOf="@id/title_card" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/l"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="6dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@id/iv_bg"
+        app:layout_constraintRight_toRightOf="@id/iv_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_bg">
+
+        <com.water.drinkwater.tracker.widget.LineChat
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="wrap_content" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="21dp"
+        android:background="#DAE5EC"
+        app:layout_constraintBottom_toBottomOf="@id/l"
+        app:layout_constraintLeft_toLeftOf="@id/l"
+        app:layout_constraintRight_toRightOf="@id/l" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginHorizontal="50dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_bg" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="148dp"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_rv"
+        app:layout_constraintTop_toBottomOf="@id/rv">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="14dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_history_icon_item"
+            app:layout_constraintBottom_toBottomOf="@id/tv_avg"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_avg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_avg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="44dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/daily_water_intake_avg"
+            android:textColor="#1C274C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_intake_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="300ml"
+            android:textColor="#757B91"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_avg"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_avg" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="14dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_history_icon_item"
+            app:layout_constraintBottom_toBottomOf="@id/tv_frequency_avg"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_frequency_avg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_frequency_avg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="44dp"
+            android:layout_marginStart="44dp"
+            android:text="@string/daily_intake_frequency_avg"
+            android:textColor="#1C274C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_avg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_intake_times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="4Times"
+            android:textColor="#757B91"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_frequency_avg"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_frequency_avg" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="14dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_history_icon_item"
+            app:layout_constraintBottom_toBottomOf="@id/tv_3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="44dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/daily_completion_rate_avg"
+            android:textColor="#1C274C"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_c_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="56%"
+            android:textColor="#757B91"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tv_3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
