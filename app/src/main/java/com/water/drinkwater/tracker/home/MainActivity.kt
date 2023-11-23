@@ -31,9 +31,7 @@ class MainActivity : BaseWaterActivity() {
             btnAddDrink.setOnClickListener {
                 CurDayDataManager.addDrink(waterPer, showFinishTip = {
                     showFinishTips()
-                }) {
-                    showOverLimitTips()
-                }
+                })
             }
             ivEdit.setOnClickListener {
                 showModifyTotal()

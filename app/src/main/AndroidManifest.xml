@@ -63,6 +63,14 @@
         <activity android:name="com.water.drinkwater.tracker.drinkhistory.HistoryActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
+        <activity android:name="com.water.drinkwater.tracker.other.ActivityWahijk" />
+        <activity android:name="com.water.drinkwater.tracker.other.ActivityWaijrkla" />
+        <activity android:name="com.water.drinkwater.tracker.other.IntakeActivity" />
+        <activity android:name="com.water.drinkwater.tracker.other.ActivityHH" />
+        <activity android:name="com.water.drinkwater.tracker.other.FakerActivity" />
+        <activity android:name="com.water.drinkwater.tracker.other.PDDActivity" />
+        <activity android:name="com.water.drinkwater.tracker.other.GmuActivity" />
+        <activity android:name="com.water.drinkwater.tracker.other.UnitActivity" />
     </application>
 
 </manifest>

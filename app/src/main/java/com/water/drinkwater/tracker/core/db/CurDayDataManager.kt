@@ -21,10 +21,7 @@ object CurDayDataManager {
         CoroutineScope(Dispatchers.Main).launch {
             createDay()
             waterDao.getCurDayWater(WaterTools.getToday())?.let {
-                (it.curFinishTotal * 100 / it.dayTotalSize).apply {
-                    curDayWaterFinishRate.value = this
-                    it.finishRate = this
-                }
+                setFinishRate(it)
                 curDayTargetValue.value = it.dayTotalSize
             }
         }
@@ -35,10 +32,7 @@ object CurDayDataManager {
             CoroutineScope(Dispatchers.Main).launch {
                 createDay()
                 waterDao.getCurDayWater(WaterTools.getToday())?.let {
-                    (it.curFinishTotal * 100 / it.dayTotalSize).apply {
-                        curDayWaterFinishRate.value = this
-                        it.finishRate = this
-                    }
+                    setFinishRate(it)
                     curDayTargetValue.value = it.dayTotalSize
                 }
             }
@@ -53,10 +47,7 @@ object CurDayDataManager {
         cruDayWaterEntity.apply {
             drinkList.removeIf { it.time == bean.time }
             curFinishTotal -= bean.size
-            (curFinishTotal * 100 / dayTotalSize).apply {
-                curDayWaterFinishRate.value = this
-                finishRate = this
-            }
+            setFinishRate(this)
             waterDao.update(this)
         }
     }
@@ -81,43 +72,40 @@ object CurDayDataManager {
         }
     }
 
-    fun addDrink(ml: Int, showFinishTip: () -> Unit, showLimitTips: () -> Unit) {
+    fun addDrink(ml: Int, showFinishTip: () -> Unit) {
         val cur = waterDao.getCurDayWater(curDayString)
         cur?.let {
             it.curFinishTotal += ml
-            if (it.curFinishTotal > it.dayTotalSize) {
-                if (it.finishRate == 100) {
-                    showLimitTips.invoke()
-                    return
-                } else {
-                    it.dayTotalSize = it.curFinishTotal
-                    showFinishTip.invoke()
-                }
-            }
             it.drinkList.add(DrinkBean(ml, System.currentTimeMillis()))
-            (it.curFinishTotal * 100 / it.dayTotalSize).apply {
-                curDayWaterFinishRate.value = this
-                it.finishRate = this
-            }
+            setFinishRate(it)
             waterDao.update(it)
+            if (it.finishRate == 100) {
+                showFinishTip.invoke()
+            }
         }
     }
 
-    fun modifyTodayGoalDrink(total: Int, success: () -> Unit, failed: () -> Unit) {
+    private fun setFinishRate(dayWaterEntity: DayWaterEntity) {
+        (dayWaterEntity.curFinishTotal * 100 / dayWaterEntity.dayTotalSize).apply {
+            var finrate = this
+            if (finrate == 0 && dayWaterEntity.curFinishTotal > 0) {
+                finrate = 1
+            }
+            if (finrate > 100) {
+                finrate = 100
+            }
+            curDayWaterFinishRate.value = finrate
+            dayWaterEntity.finishRate = finrate
+        }
+    }
+
+    fun modifyTodayGoalDrink(total: Int) {
         val cur = waterDao.getCurDayWater(curDayString)
         cur?.let {
-            if (total < it.curFinishTotal) {
-                failed.invoke()
-                return
-            }
             it.dayTotalSize = total
-            (it.curFinishTotal * 100 / it.dayTotalSize).apply {
-                curDayWaterFinishRate.value = this
-                it.finishRate = this
-            }
+            setFinishRate(it)
             curDayTargetValue.value = it.dayTotalSize
             waterDao.update(it)
-            success.invoke()
         }
     }
 

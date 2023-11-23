@@ -14,7 +14,7 @@ import kotlinx.coroutines.withContext
  */
 class HistoryViewModel : ViewModel() {
     private val day = 1000 * 60 * 60 * 24
-    private val curDayTime = System.currentTimeMillis() - day * 8
+    private val curDayTime = System.currentTimeMillis() - day * 7
     private val mDao by lazy { WaterRoom.waterDao }
     private var totalWaterAvg = 0
     private var totalWaterTimes = 0
@@ -38,11 +38,11 @@ class HistoryViewModel : ViewModel() {
                 var drinkTimes = it.drinkList.size
                 totalWaterTimes += drinkTimes
                 if (drinkTimes == 0) drinkTimes = 1
-                totalWaterAvg += it.curFinishTotal / drinkTimes
+                totalWaterAvg += it.curFinishTotal
                 totalCompletionRate += it.finishRate
                 listUiHistoryBean.add(
                     HisUiBean(
-                        it.timeBuild, it.finishRate, drinkTimes, it.curFinishTotal / drinkTimes
+                        it.timeBuild, it.finishRate, drinkTimes, it.curFinishTotal
                     )
                 )
                 if (waterDayNum == 1) {

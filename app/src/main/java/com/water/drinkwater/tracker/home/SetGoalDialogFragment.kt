@@ -1,5 +1,6 @@
 package com.water.drinkwater.tracker.home
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,7 @@ import com.water.drinkwater.tracker.databinding.DialogAddGoalBinding
  * Date：2023/11/13
  * Describe:
  */
-class SetGoalDialogFragment(val curTotal:Int) : DialogFragment() {
+class SetGoalDialogFragment(val curTotal: Int) : DialogFragment() {
     private lateinit var binding: DialogAddGoalBinding
 
     override fun onCreateView(
@@ -34,13 +35,17 @@ class SetGoalDialogFragment(val curTotal:Int) : DialogFragment() {
         binding.apply {
             tvCancel.setOnClickListener { dismiss() }
             tvConfirm.setOnClickListener {
+                val s = etInput.text.toString()
+                if (s.isBlank()) return@setOnClickListener
                 val v = etInput.text.toString().toInt()
-                CurDayDataManager.modifyTodayGoalDrink(v, success = {
-                    SharePTools.curDayGoalWaterValue = v
-                    dismiss()
-                }, failed = {
-                    Toast.makeText(context,"The value cannot be less than the amount of water consumed.",Toast.LENGTH_LONG).show()
-                })
+                if (v <= 0) {
+                    Toast.makeText(context, "The value must be greater than 0.", Toast.LENGTH_SHORT)
+                        .show()
+                    return@setOnClickListener
+                }
+                CurDayDataManager.modifyTodayGoalDrink(v)
+                SharePTools.curDayGoalWaterValue = v
+                dismiss()
             }
             etInput.setText(curTotal.toString())
         }

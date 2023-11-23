@@ -51,6 +51,7 @@ class DialogSetGenderOrWeight : DialogFragment() {
                     SharePTools.curDayGoalWaterValue = WaterTools.getCurDayTarget(
                         SharePTools.weightValue, SharePTools.genderS, SharePTools.weightUnit
                     )
+                    CurDayDataManager.modifyTodayGoalDrink(SharePTools.curDayGoalWaterValue)
                 }
                 dismiss()
             }

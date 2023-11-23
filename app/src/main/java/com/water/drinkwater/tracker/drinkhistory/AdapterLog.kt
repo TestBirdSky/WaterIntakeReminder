@@ -19,7 +19,7 @@ class AdapterLog : RecyclerView.Adapter<AdapterLog.ViewH>() {
     }
     private val list = arrayListOf<DrinkBean>().apply {
         cruDayWaterEntity?.let {
-            addAll(it.drinkList)
+            addAll(it.drinkList.sortedByDescending { it -> it.time })
         }
     }
 

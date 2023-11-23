@@ -67,6 +67,7 @@ class SetAmountPerDialogFragment(val positiveClick: (value: Int) -> Unit) : Dial
     }
 
     private fun DialogAmountPerBinding.refreshUI() {
+        tvCur.text = curValue.toString()
         context?.let {
             tv200.setBackgroundResource(R.drawable.bg_unselected2)
             tv300.setBackgroundResource(R.drawable.bg_unselected2)
