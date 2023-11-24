@@ -31,3 +31,40 @@
 -classobfuscationdictionary proguard-water.txt
 # 指定package模糊字典
 -packageobfuscationdictionary proguard-water.txt
+
+-keep class com.adjust.sdk.** { *; }
+-keep class com.google.android.gms.common.ConnectionResult {
+    int SUCCESS;
+}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient {
+    com.google.android.gms.ads.identifier.AdvertisingIdClient$Info getAdvertisingIdInfo(android.content.Context);
+}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info {
+    java.lang.String getId();
+    boolean isLimitAdTrackingEnabled();
+}
+-keep public class com.android.installreferrer.** { *; }
+
+# START OkHttp + Okio
+# JSR 305 annotations are for embedding nullability information.
+-dontwarn javax.annotation.**
+
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-adaptresourcefilenames okhttp3/internal/publicsuffix/PublicSuffixDatabase.gz
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# OkHttp platform used only on JVM and when Conscrypt and other security providers are available.
+-dontwarn okhttp3.internal.platform.**
+-dontwarn org.conscrypt.**
+-dontwarn org.bouncycastle.**
+-dontwarn org.openjsse.**
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+# END OkHttp + Okio
+
+# skip the Picasso library classes
+-keep class com.squareup.picasso.** {*;}
+-dontwarn com.squareup.okhttp.**
