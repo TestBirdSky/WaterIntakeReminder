@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".core.App"
         android:allowBackup="true"
@@ -57,12 +58,14 @@
             android:name="com.water.drinkwater.tracker.uisetting.PrivacyPActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-        <activity android:name="com.water.drinkwater.tracker.drinkhistory.TodayHydrationLogActivity"
+        <activity
+            android:name="com.water.drinkwater.tracker.drinkhistory.TodayHydrationLogActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-        <activity android:name="com.water.drinkwater.tracker.drinkhistory.HistoryActivity"
+        <activity
+            android:name="com.water.drinkwater.tracker.drinkhistory.HistoryActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity android:name="com.water.drinkwater.tracker.other.ActivityWahijk" />
         <activity android:name="com.water.drinkwater.tracker.other.ActivityWaijrkla" />
         <activity android:name="com.water.drinkwater.tracker.other.IntakeActivity" />
@@ -71,6 +74,7 @@
         <activity android:name="com.water.drinkwater.tracker.other.PDDActivity" />
         <activity android:name="com.water.drinkwater.tracker.other.GmuActivity" />
         <activity android:name="com.water.drinkwater.tracker.other.UnitActivity" />
+        <activity android:name="com.water.drinkwater.tracker.other.ReminderActivity" />
     </application>
 
 </manifest>

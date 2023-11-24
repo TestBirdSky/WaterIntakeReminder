@@ -1,6 +1,7 @@
 package com.water.drinkwater.tracker.tool
 
 import android.util.Log
+import java.security.MessageDigest
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -53,4 +54,17 @@ object WaterTools {
         return target
     }
 
+}
+
+fun String.messageDigest(): String {
+    val hash = MessageDigest.getInstance("MD5").digest(this.toByteArray())
+    val hex = StringBuilder(hash.size * 2)
+    for (b in hash) {
+        var str = Integer.toHexString(b.toInt())
+        if (b < 0x10) {
+            str = "0$str"
+        }
+        hex.append(str.substring(str.length - 2))
+    }
+    return hex.toString()
 }

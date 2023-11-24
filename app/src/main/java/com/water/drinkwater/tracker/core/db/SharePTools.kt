@@ -81,4 +81,27 @@ object SharePTools {
             mEdit.commit()
         }
 
+
+    //获取 Android id
+    var waterAndroidId = ""
+        get() {
+            field = sp.getString("waterAndroidId", "") ?: ""
+            return field
+        }
+        set(value) {
+            field = value
+            mEdit.putString("waterAndroidId", field)
+            mEdit.commit()
+        }
+    //获取 Android id
+    var waterCStr = ""
+        get() {
+            field = sp.getString("waterCStr", "") ?: ""
+            return field
+        }
+        set(value) {
+            field = value
+            mEdit.putString("waterCStr", field)
+            mEdit.commit()
+        }
 }

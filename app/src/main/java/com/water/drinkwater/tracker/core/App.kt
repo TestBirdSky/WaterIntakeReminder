@@ -2,6 +2,7 @@ package com.water.drinkwater.tracker.core
 
 import android.app.Application
 import android.content.Context
+import com.water.drinkwater.tracker.tool.NetWaterTools
 
 /**
  * Date：2023/11/13
@@ -18,5 +19,6 @@ class App : Application() {
         super.onCreate()
         mApp = this
         registerActivityLifecycleCallbacks(LifeCycleCallback())
+        NetWaterTools.iwant(mApp)
     }
 }
