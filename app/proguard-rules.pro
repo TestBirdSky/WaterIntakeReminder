@@ -68,3 +68,8 @@
 # skip the Picasso library classes
 -keep class com.squareup.picasso.** {*;}
 -dontwarn com.squareup.okhttp.**
+-keep class java.util.ArrayList{*;}
+-keep class com.water.drinkwater.tracker.core.db.DrinkBean{*;}
+
+-keep,allowobfuscation,allowshrinking class com.google.gson.reflect.TypeToken
+-keep,allowobfuscation,allowshrinking class * extends com.google.gson.reflect.TypeToken
